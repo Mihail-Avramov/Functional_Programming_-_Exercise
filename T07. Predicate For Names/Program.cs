@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
 int length = int.Parse(Console.ReadLine());
 
-List<string> namesList = Console.ReadLine()
+string[] namesList = Console.ReadLine()
     .Split(" ", StringSplitOptions.RemoveEmptyEntries)
-    .ToList();
+    .ToArray();
 
-Action<List<string>, Predicate<string>> printFilteredList = (names, match) =>
+Action<string[], Predicate<string>> printFilteredList = (names, match) =>
 {
     foreach (var name in names)
     {
